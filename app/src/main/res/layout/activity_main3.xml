@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity3">
+
+    <!--Blurred Background-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/blurred_bg"/>
+
+    <!--Floating Action Button-->
+
+    <!--app:backgroundTint="@color/btn_color1" ==> is concerned with the FAB color -->
+    <!--app:tint="@color/white" ==> is concerned with the FAB icon color -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:paddingHorizontal="25dp"
+        android:paddingVertical="25dp">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:isScrollContainer="true"
+            android:src="@drawable/ic_forward_arrow"
+            app:backgroundTint="@color/btn_color1"
+            app:tint="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="25dp"
+        android:orientation="vertical"
+        >
+
+        <!--Back Arrow-->
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/transparent"
+            android:src="@drawable/ic_back_arrow" />
+
+
+        <!--Page Title-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="65dp"
+            android:textSize="26sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="Enter your mobile number"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mobile Number"
+            android:textColor="@color/text_color2"
+            android:paddingTop="25dp"
+            android:paddingBottom="10dp"
+            />
+
+        <!--Mobile Phone Edit Field-->
+
+        <!--Frame Layout is one of the simplest layout to organize
+            view controls. They are designed to block an area on the screen.-->
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp" >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:maxLength="9"
+                    android:paddingVertical="20dp"
+                    android:paddingStart="85dp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/flag"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:paddingStart="40dp"
+                    android:text="+880" />
+            </FrameLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

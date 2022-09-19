@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+
+    <!--Groceries Iamge-->
+    <ImageView
+        android:id="@+id/header_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/groceries" />
+
+
+    <LinearLayout
+        android:layout_below="@+id/header_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <!--Page Content (Vertical Layout with paddingHorizontal="25dp")-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="25dp"
+            android:orientation="vertical">
+
+            <!--Page Title-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Get your groceries \nwith nectar"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
+
+            <!--Mobile Phone Edit Field-->
+
+            <!--Frame Layout is one of the simplest layout to organize
+                view controls. They are designed to block an area on the screen.-->
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp" >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:maxLength="9"
+                    android:paddingVertical="20dp"
+                    android:paddingStart="85dp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/flag"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:paddingStart="40dp"
+                    android:text="+880" />
+            </FrameLayout>
+
+
+            <!--Contact Info-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:paddingVertical="20dp"
+                android:textColor="@color/text_color2"
+                android:text="Or connect with social media"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                android:backgroundTint="@color/google_btn_color"
+                android:background="@drawable/btn_style"
+                android:drawableStart="@drawable/google_icon"
+                android:paddingHorizontal="30dp"
+                android:text="Continue with Google"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                />
+            <!--Spacing-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                android:backgroundTint="@color/facebook_btn_color"
+                android:background="@drawable/btn_style"
+                android:drawableStart="@drawable/facebook_icon"
+                android:paddingHorizontal="30dp"
+                android:text="Continue with Facebook"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                />
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--Nectar Logo-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:paddingLeft="240dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/bag_logo" />
+
+</RelativeLayout>
