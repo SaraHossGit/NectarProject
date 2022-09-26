@@ -13,5 +13,6 @@
     <color name="google_btn_color">#5383EC</color>
     <color name="facebook_btn_color">#4A66AC</color>
     <color name="transparent">#00FFFFFF</color>
+    <color name="search_bar_color">#F2F3F2</color>
 
 </resources>

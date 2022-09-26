@@ -8,7 +8,7 @@
     tools:context=".ConnectScreen">
 
 
-    <!--Groceries Iamge-->
+    <!--Groceries Image-->
     <ImageView
         android:id="@+id/header_image"
         android:layout_width="match_parent"
