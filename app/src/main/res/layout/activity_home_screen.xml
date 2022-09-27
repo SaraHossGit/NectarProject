@@ -105,6 +105,7 @@
 
                 <!--    Exclusive Offers RecyclerView    -->
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/exclusive_recycler_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="24dp"
@@ -140,6 +141,7 @@
 
                 <!--    Best Selling RecyclerView    -->
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/best_selling_recycler_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="24dp"
@@ -175,6 +177,7 @@
 
                 <!--    Groceries RecyclerView    -->
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/groceries_recycler_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="24dp"
@@ -183,6 +186,7 @@
 
                 <!--    Last RecyclerView    -->
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/last_recycler_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="24dp"
