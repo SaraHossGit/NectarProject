@@ -21,10 +21,10 @@ public class HomeScreen extends AppCompatActivity {
     ArrayList <GroceriesModel> groceryList = new ArrayList<>();
 
     // Exclusive Product Data
-    int[] productImage1 = {R.drawable.item1, R.drawable.item2, R.drawable.item3};
-    String[] productName1 = {"Organic Bananas", "Bell Pepper", "Ginger"};
-    String[] productAmount1 = {"7pcs, Priceg", "7pcs, Priceg", "7pcs, Priceg"};
-    String[] productPrice1 = {"$4.99", "$4.99", "$4.99"};
+    int[] productImage1 = {R.drawable.item6, R.drawable.item7, R.drawable.item1, R.drawable.item2, R.drawable.item3};
+    String[] productName1 = {"Tomatoes", "Carrots", "Organic Bananas", "Bell Pepper", "Ginger"};
+    String[] productAmount1 = {"1Kg", "2Kg", "7pcs, Priceg", "7pcs, Priceg", "7pcs, Priceg"};
+    String[] productPrice1 = {"$10.99", "$6.99", "$4.99", "$5.50", "$4.99"};
 
     // Best Selling Product Data
     int[] productImage2 = {R.drawable.item4, R.drawable.item5};
