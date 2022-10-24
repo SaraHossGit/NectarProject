@@ -46,6 +46,7 @@ public class OTPScreen extends AppCompatActivity {
                 }
                 else{
                     Toast.makeText(OTPScreen.this, "OTP Entered is not correct", Toast.LENGTH_SHORT).show();
+                    otp.setText("");
                 }
             }
         });

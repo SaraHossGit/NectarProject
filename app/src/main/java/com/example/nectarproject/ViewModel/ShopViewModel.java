@@ -19,7 +19,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ProductsViewModel extends ViewModel {
+public class ShopViewModel extends ViewModel {
     private MutableLiveData<List<ProductModel>> productsList;
 
     public MutableLiveData<List<ProductModel>> getProductsList(Context context) {

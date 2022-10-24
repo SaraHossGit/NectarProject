@@ -1,6 +1,7 @@
 package com.example.nectarproject.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.nectarproject.R;
 import com.example.nectarproject.Repo.Remote.ProductModel;
+import com.example.nectarproject.UI.DetailsScreen;
+import com.example.nectarproject.UI.GetStartedScreen;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,14 +48,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHand
                 .centerCrop()
                 .into(holder.productImage);
 
-//        holder.productImage.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(context, GetStartedScreen.class);
-////                intent.putExtra("movieSelected", viewHolder.getBindingAdapterPosition());
-//                context.startActivity(intent);
-//            }
-//        });
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, DetailsScreen.class);
+//                intent.putExtra("movieSelected", viewHolder.getBindingAdapterPosition());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
