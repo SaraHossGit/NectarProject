@@ -1,22 +1,22 @@
 package com.example.nectarproject.UI;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.nectarproject.R;
 
-public class LoginScreen extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_screen);
+        setContentView(R.layout.activity_login);
     }
 
 //    @Override
@@ -32,7 +32,7 @@ public class LoginScreen extends AppCompatActivity {
 //    }
 
     public void goToSignup(View view) {
-        Intent i=new Intent(LoginScreen.this, SignUpScreen.class);
+        Intent i=new Intent(LoginActivity.this, SignUpActivity.class);
         startActivity(i);
     }
 }

@@ -12,13 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NectarProject">
         <activity
-            android:name=".UI.DetailsScreen"
+            android:name=".UI.DetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".UI.OTPScreen"
+            android:name=".UI.OTPActivity"
             android:exported="false" />
         <activity
-            android:name=".UI.HomeScreen"
+            android:name=".UI.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,13 +27,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UI.SignUpScreen"
+            android:name=".UI.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".UI.SplashScreen"
+            android:name=".UI.SplashActivity"
             android:exported="true" />
         <activity
-            android:name=".UI.LoginScreen"
+            android:name=".UI.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,7 +42,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UI.MobileNumScreen"
+            android:name=".UI.MobileNumActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -51,7 +51,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UI.ConnectScreen"
+            android:name=".UI.ConnectActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -60,7 +60,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UI.GetStartedScreen"
+            android:name=".UI.GetStartedActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

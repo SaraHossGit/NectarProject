@@ -14,10 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.nectarproject.R;
 import com.example.nectarproject.Repo.Remote.ProductModel;
-import com.example.nectarproject.UI.DetailsScreen;
-import com.example.nectarproject.UI.GetStartedScreen;
+import com.example.nectarproject.UI.DetailsActivity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHandler> {
@@ -33,7 +31,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHand
     @NonNull
     @Override
     public ProductAdapter.ViewHandler onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_list_item1, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_product_item, parent, false);
         return new ViewHandler(view);
     }
 
@@ -51,7 +49,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHand
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, DetailsScreen.class);
+                Intent intent = new Intent(context, DetailsActivity.class);
 //                intent.putExtra("movieSelected", viewHolder.getBindingAdapterPosition());
                 context.startActivity(intent);
             }

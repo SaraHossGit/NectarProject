@@ -1,7 +1,5 @@
 package com.example.nectarproject.UI;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,11 +7,13 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.chaos.view.PinView;
 import com.example.nectarproject.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class OTPScreen extends AppCompatActivity {
+public class OTPActivity extends AppCompatActivity {
 
     TextView resendOTP;
     ImageButton backBtn;
@@ -25,7 +25,7 @@ public class OTPScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_otpscreen);
+        setContentView(R.layout.activity_otp);
 
         resendOTP =findViewById(R.id.resend_otp);
         backBtn =findViewById(R.id.otp_back);
@@ -40,12 +40,12 @@ public class OTPScreen extends AppCompatActivity {
             public void onClick(View view) {
                 otpValue = otp.getText().toString();
                 if (otpValue.equals(otpCheckValue)){
-                    Intent i = new Intent(OTPScreen.this, HomeScreen.class);
+                    Intent i = new Intent(OTPActivity.this, HomeActivity.class);
                     startActivity(i);
                     finish();
                 }
                 else{
-                    Toast.makeText(OTPScreen.this, "OTP Entered is not correct", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(OTPActivity.this, "OTP Entered is not correct", Toast.LENGTH_SHORT).show();
                     otp.setText("");
                 }
             }

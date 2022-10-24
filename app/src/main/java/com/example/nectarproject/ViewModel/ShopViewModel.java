@@ -6,8 +6,6 @@ import android.widget.Toast;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.example.nectarproject.Repo.Remote.ProductModel;
 import com.example.nectarproject.Repo.Remote.ResponseModel;

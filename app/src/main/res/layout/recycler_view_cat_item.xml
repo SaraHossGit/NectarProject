@@ -5,13 +5,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_view"
         android:layout_width="250dp"
         android:layout_height="105dp"
         android:layout_marginRight="15dp"
+        android:layout_marginBottom="5dp"
         app:cardCornerRadius="18dp">
 
         <LinearLayout
+            android:id="@+id/layout_card_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="start"

@@ -1,8 +1,5 @@
 package com.example.nectarproject.Repo.Local;
 
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-
 public class GroceriesModel {
     private int cardViewColor;
     private int groceryImage;
