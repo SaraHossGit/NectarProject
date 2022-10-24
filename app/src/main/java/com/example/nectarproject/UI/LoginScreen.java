@@ -1,4 +1,4 @@
-package com.example.nectarproject;
+package com.example.nectarproject.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+
+import com.example.nectarproject.R;
 
 public class LoginScreen extends AppCompatActivity {
 

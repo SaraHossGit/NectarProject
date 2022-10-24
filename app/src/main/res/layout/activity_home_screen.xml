@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/parent_relative_layout"
-    tools:context=".HomeScreen">
+    tools:context=".UI.HomeScreen">
 
     <LinearLayout
         android:id="@+id/parent_linear_layout"

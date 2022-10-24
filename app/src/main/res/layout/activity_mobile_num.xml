@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/text_color1"
-    tools:context=".MobileNum">
+    tools:context=".UI.MobileNumScreen">
 
     <!--Blurred Background-->
     <ImageView
@@ -27,6 +27,7 @@
         android:paddingVertical="25dp">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/mobile_num_fab_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
@@ -45,6 +46,7 @@
 
         <!--Back Arrow-->
         <ImageButton
+            android:id="@+id/mobile_num_back"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:backgroundTint="@color/transparent"
@@ -86,23 +88,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="phone"
-                    android:maxLength="9"
-                    android:paddingVertical="20dp"
-                    android:paddingStart="85dp"/>
+                    android:maxLength="10"
+                    android:paddingVertical="10dp"
+                    android:paddingStart="150dp"/>
 
-                <ImageView
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/country_code_picker"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/flag"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:paddingStart="40dp"
-                    android:text="+880" />
+                    app:ccp_autoDetectCountry="true"
+                    />
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:paddingStart="40dp"-->
+<!--                    android:text="+880" />-->
             </FrameLayout>
 
     </LinearLayout>

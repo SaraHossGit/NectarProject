@@ -1,4 +1,4 @@
-package com.example.nectarproject;
+package com.example.nectarproject.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,14 +10,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.example.nectarproject.R;
+import com.example.nectarproject.Repo.Remote.ProductModel;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHandler> {
 
     Context context;
-    ArrayList <ProductModel> data = new ArrayList<>();
+    List<ProductModel> data;
 
-    public ProductAdapter(Context context, ArrayList<ProductModel> data) {
+    public ProductAdapter(Context context, List<ProductModel> data) {
         this.context = context;
         this.data = data;
     }
@@ -32,9 +37,22 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHand
     @Override
     public void onBindViewHolder(@NonNull ProductAdapter.ViewHandler holder, int position) {
         holder.productName.setText(data.get(position).getProductName());
-        holder.productAmount.setText(data.get(position).getProductAmount());
-        holder.productPrice.setText(data.get(position).getProductPrice());
-        holder.productImage.setImageResource(data.get(position).getProductImage());
+//        holder.productAmount.setText(data.get(position).getProductStock());
+//        holder.productPrice.setText(data.get(position).getProductPrice());
+//        holder.productImage.setImageResource(data.get(position).getProductImage());
+        Glide.with(context)
+                .load(data.get(position).getProductImage())
+                .centerCrop()
+                .into(holder.productImage);
+
+//        holder.productImage.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(context, GetStartedScreen.class);
+////                intent.putExtra("movieSelected", viewHolder.getBindingAdapterPosition());
+//                context.startActivity(intent);
+//            }
+//        });
     }
 
     @Override

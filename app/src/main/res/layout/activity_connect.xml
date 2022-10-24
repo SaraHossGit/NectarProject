@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/text_color1"
-    tools:context=".ConnectScreen">
+    tools:context=".UI.ConnectScreen">
 
 
     <!--Groceries Image-->
@@ -42,37 +42,20 @@
 
             <!--Mobile Phone Edit Field-->
 
-            <!--Frame Layout is one of the simplest layout to organize
-                view controls. They are designed to block an area on the screen.-->
-
-            <FrameLayout
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/phone_connect"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp" >
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="phone"
-                    android:maxLength="9"
-                    android:paddingVertical="20dp"
-                    android:paddingStart="85dp"/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/flag"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:paddingStart="40dp"
-                    android:text="+880" />
-            </FrameLayout>
+                android:layout_height="67dp"
+                android:backgroundTint="@color/btn_color1"
+                android:background="@drawable/btn_style"
+                android:drawableStart="@drawable/ic_phone"
+                android:paddingHorizontal="30dp"
+                android:text="Continue with Phone Number"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                />
 
 
             <!--Contact Info-->

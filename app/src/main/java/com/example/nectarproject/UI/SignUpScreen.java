@@ -1,10 +1,12 @@
-package com.example.nectarproject;
+package com.example.nectarproject.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.nectarproject.R;
 
 public class SignUpScreen extends AppCompatActivity {
 

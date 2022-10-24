@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:background="@color/text_color1"
+tools:context=".UI.OTPScreen">
+
+<!--Blurred Background-->
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:src="@drawable/blurred_bg"/>
+
+<!--Floating Action Button-->
+
+<!--app:backgroundTint="@color/btn_color1" ==> is concerned with the FAB color -->
+<!--app:tint="@color/white" ==> is concerned with the FAB icon color -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:paddingHorizontal="25dp"
+        android:paddingVertical="25dp">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/otp_fab_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:isScrollContainer="true"
+            android:src="@drawable/ic_forward_arrow"
+            app:backgroundTint="@color/btn_color1"
+            app:tint="@color/white" />
+    </LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="25dp"
+    android:orientation="vertical"
+    >
+
+    <!--Back Arrow-->
+    <ImageButton
+        android:id="@+id/otp_back"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/transparent"
+        android:src="@drawable/ic_back_arrow" />
+
+
+    <!--Page Title-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="65dp"
+        android:textSize="26sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="Enter your 4-digit code"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Code"
+        android:textColor="@color/text_color2"
+        android:paddingTop="25dp"
+        android:paddingBottom="10dp"
+        />
+
+    <!--OTP Pin View-->
+
+    <com.chaos.view.PinView
+        android:id="@+id/otp_pin_view"
+        style="@style/PinWidget.PinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:cursorVisible="true"
+        android:inputType="number"
+        android:itemBackground="#65EAEAEA"
+        app:cursorColor="@color/btn_color1"
+        app:hideLineWhenFilled="true"
+        app:itemCount="4"
+        app:itemWidth="50dp"
+        app:lineColor="@color/btn_color1"
+        app:viewType="line"/>
+
+    <TextView
+        android:id="@+id/resend_otp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:textColor="@color/btn_color1"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:text="Resend Code"/>
+
+</LinearLayout>
+
+</RelativeLayout>
