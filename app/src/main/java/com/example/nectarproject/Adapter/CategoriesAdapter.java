@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.nectarproject.R;
 import com.example.nectarproject.Repo.Local.CategoriesModel;
+import com.example.nectarproject.UI.CatSearchActivity;
 
 import java.util.List;
 
@@ -67,22 +68,34 @@ public class CategoriesAdapter extends RecyclerView.Adapter {
                 ((MinViewHolder) holder).productName.setText(categoriesList.get(position).getCatName());
                 ((MinViewHolder) holder).catCard.setBackgroundColor(categoriesList.get(position).getCardViewColor());
                 ((MinViewHolder) holder).catImage.setImageResource(categoriesList.get(position).getCatImage());
+
+                // Intent on the details page of the selected category
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent i = new Intent(context, CatSearchActivity.class);
+                        int catIdx =holder.getAdapterPosition();
+                        i.putExtra("cat",categoriesList.get(catIdx).getCatName());
+                        context.startActivity(i);
+                    }
+                });
                 break;
+
             case CategoriesModel.MAX_VIEW:
                 ((MaxViewHolder) holder).productName.setText(categoriesList.get(position).getCatName());
                 ((MaxViewHolder) holder).catCard.setBackgroundColor(categoriesList.get(position).getCardViewColor());
                 ((MaxViewHolder) holder).catImage.setImageResource(categoriesList.get(position).getCatImage());
 
-
-//                // Intent on the details page of the selected product
-//                holder.itemView.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//                        Intent i = new Intent(context,ProductDetails.class);
-//                        i.putExtra("index",holder.getAdapterPosition());
-//                        context.startActivity(i);
-//                    }
-//                });
+                // Intent on the details page of the selected category
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent i = new Intent(context, CatSearchActivity.class);
+                        int catIdx =holder.getAdapterPosition();
+                        i.putExtra("cat",categoriesList.get(catIdx).getCatName());
+                        context.startActivity(i);
+                    }
+                });
                 break;
 
         }

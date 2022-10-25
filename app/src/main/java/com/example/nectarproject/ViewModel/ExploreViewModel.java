@@ -19,6 +19,15 @@ import retrofit2.Response;
 
 public class ExploreViewModel  extends ViewModel {
     private MutableLiveData<List<String>> categoriesList;
+    private MutableLiveData<List<ProductModel>> catProductsList;
+
+    public MutableLiveData<List<ProductModel>> getCatProductsList(Context context, String cat) {
+        if (catProductsList == null) {
+            catProductsList = new MutableLiveData<>();
+            loadCatProducts(context, cat);
+        }
+        return catProductsList;
+    }
 
     public MutableLiveData<List<String>> getCategoriesList(Context context) {
         if (categoriesList == null) {
@@ -44,6 +53,31 @@ public class ExploreViewModel  extends ViewModel {
             @Override
             public void onFailure(Call<List<String>> call, Throwable t) {
                 Toast.makeText(context, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
+    private void loadCatProducts(Context context, String cat) {
+        Call<ResponseModel> call = RetrofitClient.getInstance().getMyAPI().searchCategoryProducts(cat);
+        call.enqueue(new Callback<ResponseModel>() {
+            @Override
+            public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                if (!response.isSuccessful()) {
+                    Toast.makeText(context, "The code is: " + String.valueOf(response.code()), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                ResponseModel responseList = response.body();
+                catProductsList.setValue(responseList.getProducts());
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseModel> call, Throwable t) {
+                Toast.makeText(context, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.d("TAG", "onFailure: " + t.getMessage());
+
             }
         });
     }

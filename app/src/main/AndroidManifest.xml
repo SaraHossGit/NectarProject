@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NectarProject">
         <activity
+            android:name=".UI.CatSearchActivity"
+            android:exported="false" />
+        <activity
             android:name=".UI.DetailsActivity"
             android:exported="false" />
         <activity
