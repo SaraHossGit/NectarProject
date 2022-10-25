@@ -50,7 +50,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHand
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, DetailsActivity.class);
-                intent.putExtra("productIdx", holder.getAdapterPosition());
+                intent.putExtra("productIdx", holder.getAdapterPosition() );
                 context.startActivity(intent);
             }
         });

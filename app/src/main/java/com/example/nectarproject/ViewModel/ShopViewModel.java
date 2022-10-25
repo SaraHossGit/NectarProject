@@ -40,13 +40,6 @@ public class ShopViewModel extends ViewModel {
 
                 ResponseModel responseList = response.body();
                 productsList.setValue(responseList.getProducts());
-//                Product title = new Product();
-//                title.type = Product.TITLE_TYPE;
-//                products.add(0, title);
-//
-//                ProductsAdapter productsAdapter = new ProductsAdapter(MainActivity.this, products);
-//                recyclerView.setAdapter(productsAdapter);
-//                recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL));
 
             }
 

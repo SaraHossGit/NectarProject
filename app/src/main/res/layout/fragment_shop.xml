@@ -184,7 +184,32 @@
                         android:orientation="horizontal"
                         tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-                    <!--    Last RecyclerView    -->
+                    <!--    Highly Recommended Offers Title    -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Highly Recommended"
+                            android:textColor="@color/black"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:text="See all"
+                            android:textColor="@color/btn_color1" />
+
+                    </LinearLayout>
+
+                    <!--    Highly Recommended Offers RecyclerView    -->
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/last_recycler_view"
                         android:layout_width="match_parent"

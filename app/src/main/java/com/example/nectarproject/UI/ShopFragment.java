@@ -30,28 +30,7 @@ public class ShopFragment extends Fragment {
     RecyclerView recyclerView1, recyclerView2, recyclerView3, recyclerView4;
     ProductAdapter productAdapter1, productAdapter2, productAdapter3;
     GroceriesAdapter groceriesAdapter;
-    ArrayList<ProductModel> productList1 = new ArrayList<>();
-    ArrayList <ProductModel> productList2 = new ArrayList<>();
-    ArrayList <ProductModel> productList3 = new ArrayList<>();
     ArrayList <GroceriesModel> groceryList = new ArrayList<>();
-
-//    // Exclusive Product Data
-//    int[] productImage1 = {R.drawable.item6, R.drawable.item7, R.drawable.item1, R.drawable.item2, R.drawable.item3};
-//    String[] productName1 = {"Tomatoes", "Carrots", "Organic Bananas", "Bell Pepper", "Ginger"};
-//    String[] productAmount1 = {"1Kg", "2Kg", "7pcs, Priceg", "7pcs, Priceg", "7pcs, Priceg"};
-//    String[] productPrice1 = {"$10.99", "$6.99", "$4.99", "$5.50", "$4.99"};
-//
-//    // Best Selling Product Data
-//    int[] productImage2 = {R.drawable.item4, R.drawable.item5};
-//    String[] productName2 = {"Meat", "Chicken"};
-//    String[] productAmount2 = {"1Kg, Priceg", "1Kg, Priceg"};
-//    String[] productPrice2 = {"$40.00", "$35.99"};
-//
-//    // Last Product Data
-//    int[] productImage3 = {R.drawable.item1, R.drawable.item2, R.drawable.item3, R.drawable.item4};
-//    String[] productName3 = {"Organic Bananas", "Bell Pepper", "Ginger", "Meat"};
-//    String[] productAmount3 = {"7pcs, Priceg", "7pcs, Priceg", "7pcs, Priceg", "7pcs, Priceg"};
-//    String[] productPrice3 = {"$4.99", "$4.99", "$4.99", "$4.99"};
 
     // Groceries Data
     int[] groceryImage = {R.drawable.pulses, R.drawable.rice};
@@ -74,31 +53,11 @@ public class ShopFragment extends Fragment {
         mViewModel = new ViewModelProvider(this).get(ShopViewModel.class);
         // TODO: Use the ViewModel
 
-        //
-//        recyclerView1 = findViewById(R.id.exclusive_recycler_view);
-//        productAdapter1 = new ProductAdapter(this, productList1);
-//        recyclerView1.setAdapter(productAdapter1);
-//        recyclerView1.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-//        setProducts(1);
-//
-//        recyclerView2 = findViewById(R.id.best_selling_recycler_view);
-//        productAdapter2 = new ProductAdapter(this, productList2);
-//        recyclerView2.setAdapter(productAdapter2);
-//        recyclerView2.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-//        setProducts(2);
-//
-
-//
-//        setProducts(3);
-
         ShopViewModel productsVM = new ViewModelProvider(this).get(ShopViewModel.class);
         productsVM.getProductsList(getContext()).observe(getViewLifecycleOwner(), new Observer<List<ProductModel>>() {
             @Override
             public void onChanged(List<ProductModel> productList) {
-                recyclerView3 = getView().findViewById(R.id.last_recycler_view);
-                productAdapter3 = new ProductAdapter(getContext(), productList);
-                recyclerView3.setAdapter(productAdapter3);
-                recyclerView3.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+                setProducts(productList);
             }
         });
         recyclerView4 = getView().findViewById(R.id.groceries_recycler_view);
@@ -110,7 +69,46 @@ public class ShopFragment extends Fragment {
 
     }
 
+    private void setProducts(List<ProductModel> productList) {
+        // When all products are fetched categorize them into:
 
+        // 1. Exclusive offer (discount>15)
+        ArrayList<ProductModel> exclusiveOffers  = new ArrayList<>();
+        for ( ProductModel product : productList){
+            if (product.getDiscountPercentage() >=15){
+                exclusiveOffers.add(product);
+            }
+        }
+        recyclerView1 = getView().findViewById(R.id.exclusive_recycler_view);
+        productAdapter1 = new ProductAdapter(getContext(), exclusiveOffers);
+        recyclerView1.setAdapter(productAdapter1);
+        recyclerView1.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+
+        // 2. Best selling (quantity<20)
+        ArrayList<ProductModel> bestSelling  = new ArrayList<>();
+        for ( ProductModel product : productList){
+            if (product.getProductStock() <=20){
+                bestSelling.add(product);
+            }
+        }
+        recyclerView2 = getView().findViewById(R.id.best_selling_recycler_view);
+        productAdapter2 = new ProductAdapter(getContext(), bestSelling);
+        recyclerView2.setAdapter(productAdapter2);
+        recyclerView2.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+
+
+        // 3. Highly recommended (rating>4.5)
+        ArrayList<ProductModel> highlyRecom  = new ArrayList<>();
+        for ( ProductModel product : productList){
+            if (product.getProductRating() >=4.5){
+                highlyRecom.add(product);
+            }
+        }
+        recyclerView3 = getView().findViewById(R.id.last_recycler_view);
+        productAdapter3 = new ProductAdapter(getContext(), highlyRecom);
+        recyclerView3.setAdapter(productAdapter3);
+        recyclerView3.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+    }
 
 
     private void setGroceries() {
