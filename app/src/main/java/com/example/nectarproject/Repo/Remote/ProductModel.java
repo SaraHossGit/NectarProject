@@ -11,6 +11,8 @@ public class ProductModel {
     private String productDescription;
     @SerializedName("price")
     private double productPrice;
+    @SerializedName("discountPercentage")
+    private double discountPercentage;
     @SerializedName("rating")
     private double productRating;
     @SerializedName("stock")
@@ -23,6 +25,10 @@ public class ProductModel {
     private String productImage;
     @SerializedName("images")
     private List<String> ProductImages = null;
+
+    public double getDiscountPercentage() {
+        return discountPercentage;
+    }
 
     public List<String> getProductImages() {
         return ProductImages;

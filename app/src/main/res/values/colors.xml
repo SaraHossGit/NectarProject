@@ -16,5 +16,7 @@
     <color name="search_bar_color">#F2F3F2</color>
     <color name="tile_color_1">#26F8A44C</color>
     <color name="tile_color_2">#2653B175</color>
+    <color name="light_grey">#B3F1F1F1</color>
+    <color name="red">#FF0000</color>
 
 </resources>
