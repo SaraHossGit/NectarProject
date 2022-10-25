@@ -12,7 +12,7 @@
         android:id="@+id/header_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/groceries" />
+        android:src="@drawable/groceries_banner" />
 
 
     <LinearLayout
@@ -110,8 +110,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
-        android:paddingLeft="240dp"
         android:layout_marginTop="10dp"
+        android:paddingLeft="240dp"
         android:src="@drawable/bag_logo" />
 
 </RelativeLayout>

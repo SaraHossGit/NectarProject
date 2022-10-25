@@ -29,7 +29,7 @@ public class HomeActivity extends AppCompatActivity {
 
         // define your fragments here
         final Fragment fragment1 = new ShopFragment();
-//        final Fragment fragment2 = new SecondFragment();
+        final Fragment fragment2 = new ExploreFragment();
 //        final Fragment fragment3 = new ThirdFragment();
         fragmentManager.beginTransaction().replace(R.id.rlContainer, fragment1).commit();
 
@@ -43,7 +43,7 @@ public class HomeActivity extends AppCompatActivity {
                         fragment = fragment1;
                         break;
                     case R.id.page_2:
-//                        fragment = fragment2;
+                        fragment = fragment2;
                         break;
                     case R.id.page_3:
                     default:

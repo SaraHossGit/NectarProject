@@ -11,13 +11,14 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.nectarproject.Adapter.GroceriesAdapter;
+import com.example.nectarproject.Adapter.CategoriesAdapter;
 import com.example.nectarproject.Adapter.ProductAdapter;
 import com.example.nectarproject.R;
-import com.example.nectarproject.Repo.Local.GroceriesModel;
+import com.example.nectarproject.Repo.Local.CategoriesModel;
 import com.example.nectarproject.Repo.Remote.ProductModel;
 import com.example.nectarproject.ViewModel.ShopViewModel;
 
@@ -29,13 +30,29 @@ public class ShopFragment extends Fragment {
     private ShopViewModel mViewModel;
     RecyclerView recyclerView1, recyclerView2, recyclerView3, recyclerView4;
     ProductAdapter productAdapter1, productAdapter2, productAdapter3;
-    GroceriesAdapter groceriesAdapter;
-    ArrayList <GroceriesModel> groceryList = new ArrayList<>();
+    RecyclerView recyclerView;
+    CategoriesAdapter categoriesAdapter;
 
+    ArrayList <CategoriesModel> categoriesModelsList = new ArrayList<>();
     // Groceries Data
-    int[] groceryImage = {R.drawable.pulses, R.drawable.rice};
-    int[] cardViewColor = {Color.parseColor("#26F8A44C"), Color.parseColor("#2653B175")};
-    String[] groceryName = {"Pulses", "Rice"};
+    int[] catImage = {R.drawable.smartphones, R.drawable.laptops, R.drawable.fragrances,
+            R.drawable.skincare, R.drawable.groceries, R.drawable.home_decoration, R.drawable.furniture,
+            R.drawable.tops, R.drawable.womens_dresses, R.drawable.womens_shoes, R.drawable.mens_shirts,
+            R.drawable.mens_shoes, R.drawable.mens_watches, R.drawable.womens_watches, R.drawable.womens_bags,
+            R.drawable.womens_jewellery, R.drawable.sunglasses, R.drawable.automotive, R.drawable.motorcycle,
+            R.drawable.lighting
+    };
+
+    int[] cardViewColor = {Color.parseColor("#26F8A44C"), Color.parseColor("#2653B175"),
+            Color.parseColor("#40D3B0E0"),Color.parseColor("#40B7DFF5"),
+            Color.parseColor("#26F8A44C"), Color.parseColor("#2653B175"),
+            Color.parseColor("#40D3B0E0"),Color.parseColor("#40B7DFF5"),
+            Color.parseColor("#26F8A44C"), Color.parseColor("#2653B175"),
+            Color.parseColor("#40D3B0E0"),Color.parseColor("#40FDE598"),
+            Color.parseColor("#26F8A44C"), Color.parseColor("#2653B175"),
+            Color.parseColor("#40D3B0E0"),Color.parseColor("#40B7DFF5"),
+            Color.parseColor("#26F8A44C"), Color.parseColor("#2653B175"),
+            Color.parseColor("#40D3B0E0"),Color.parseColor("#40FDE598")};
 
     public static ShopFragment newInstance() {
         return new ShopFragment();
@@ -54,18 +71,22 @@ public class ShopFragment extends Fragment {
         // TODO: Use the ViewModel
 
         ShopViewModel productsVM = new ViewModelProvider(this).get(ShopViewModel.class);
+
+        // Get Products
         productsVM.getProductsList(getContext()).observe(getViewLifecycleOwner(), new Observer<List<ProductModel>>() {
             @Override
             public void onChanged(List<ProductModel> productList) {
                 setProducts(productList);
             }
         });
-        recyclerView4 = getView().findViewById(R.id.groceries_recycler_view);
-        groceriesAdapter = new GroceriesAdapter(getContext(), groceryList);
-        recyclerView4.setAdapter(groceriesAdapter);
-        recyclerView4.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
 
-        setGroceries();
+        // Get Categories
+        productsVM.getCategoriesList(getContext()).observe(getViewLifecycleOwner(), new Observer<List<String>>() {
+            @Override
+            public void onChanged(List<String> catList) {
+                setCategories(catList);
+            }
+        });
 
     }
 
@@ -111,51 +132,21 @@ public class ShopFragment extends Fragment {
     }
 
 
-    private void setGroceries() {
-        for (int i = 0; i < groceryName.length;i++){
-            groceryList.add(new GroceriesModel(
+    private void setCategories(List<String> catList) {
+
+        for (int i = 0; i < catList.size();i++){
+            categoriesModelsList.add(new CategoriesModel(
+                    CategoriesModel.MIN_VIEW,
                     cardViewColor[i],
-                    groceryImage[i],
-                    groceryName[i]
+                    catImage[i],
+                    catList.get(i)
             ));
         }
-    }
+        recyclerView = getView().findViewById(R.id.groceries_recycler_view);
+        categoriesAdapter = new CategoriesAdapter(getContext(), categoriesModelsList);
+        recyclerView.setAdapter(categoriesAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
 
-//    private void setProducts(int listNum) {
-//            switch (listNum){
-//                case 1:
-//                    for (int i = 0; i < productName1.length;i++) {
-//                        productList1.add(new ProductModel(
-//                                productImage1[i],
-//                                productName1[i],
-//                                productAmount1[i],
-//                                productPrice1[i]
-//                        ));
-//                    }
-//                    break;
-//                case 2:
-//                    for (int i = 0; i < productName2.length;i++) {
-//                        productList2.add(new ProductModel(
-//                                productImage2[i],
-//                                productName2[i],
-//                                productAmount2[i],
-//                                productPrice2[i]
-//                        ));
-//                    }
-//                    break;
-//                case 3:
-//                    for (int i = 0; i < productName3.length;i++) {
-//                        productList3.add(new ProductModel(
-//                                productImage3[i],
-//                                productName3[i],
-//                                productAmount3[i],
-//                                productPrice3[i]
-//                        ));
-//                    }
-//                    break;
-//            }
-//
-//
-//    }
+    }
 
 }

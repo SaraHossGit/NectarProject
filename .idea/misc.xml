@@ -30,10 +30,14 @@
         <entry key="..\:/Android Studio/NectarProject/app/src/main/res/layout/activity_sign_up_screen.xml" value="0.25416666666666665" />
         <entry key="..\:/Android Studio/NectarProject/app/src/main/res/layout/activity_splash_screen.xml" value="0.25416666666666665" />
         <entry key="..\:/Android Studio/NectarProject/app/src/main/res/layout/blank_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android Studio/NectarProject/app/src/main/res/layout/explore_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android Studio/NectarProject/app/src/main/res/layout/fragment_explore.xml" value="0.12916666666666668" />
         <entry key="..\:/Android Studio/NectarProject/app/src/main/res/layout/fragment_first.xml" value="0.25416666666666665" />
         <entry key="..\:/Android Studio/NectarProject/app/src/main/res/layout/fragment_second.xml" value="0.24010416666666667" />
         <entry key="..\:/Android Studio/NectarProject/app/src/main/res/layout/fragment_shop.xml" value="0.25416666666666665" />
         <entry key="..\:/Android Studio/NectarProject/app/src/main/res/layout/image_slider_layout_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android Studio/NectarProject/app/src/main/res/layout/recycler_view_cat_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android Studio/NectarProject/app/src/main/res/layout/recycler_view_cat_item2.xml" value="0.25416666666666665" />
         <entry key="..\:/Android Studio/NectarProject/app/src/main/res/layout/recycler_view_list_item1.xml" value="0.4" />
         <entry key="..\:/Android Studio/NectarProject/app/src/main/res/layout/recycler_view_list_item2.xml" value="0.25416666666666665" />
         <entry key="..\:/Android Studio/NectarProject/app/src/main/res/layout/recycler_view_product_item.xml" value="0.25416666666666665" />
