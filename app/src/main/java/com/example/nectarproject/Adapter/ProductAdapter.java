@@ -2,6 +2,7 @@ package com.example.nectarproject.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,7 +51,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHand
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, DetailsActivity.class);
-                intent.putExtra("productIdx", holder.getAdapterPosition() );
+                int pos = holder.getAdapterPosition();
+                intent.putExtra("productIdx", data.get(pos).getProductId());
                 context.startActivity(intent);
             }
         });

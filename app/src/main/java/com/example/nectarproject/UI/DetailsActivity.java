@@ -3,6 +3,7 @@ package com.example.nectarproject.UI;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -69,7 +70,7 @@ public class DetailsActivity extends AppCompatActivity {
                 Bundle bun= ii.getExtras();
                 if (bun!=null) {
                     int currentProdIdx = bun.getInt("productIdx");
-                    currentProd = productList.get(currentProdIdx);
+                    currentProd = productList.get(currentProdIdx-1);
                     //// Set Product Data ////
                     setProductData();
                 }

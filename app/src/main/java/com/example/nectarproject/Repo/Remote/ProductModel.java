@@ -5,6 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class ProductModel {
+    @SerializedName("id")
+    private int productId;
     @SerializedName("title")
     private String productName;
     @SerializedName("description")
@@ -25,6 +27,10 @@ public class ProductModel {
     private String productImage;
     @SerializedName("images")
     private List<String> ProductImages = null;
+
+    public int getProductId() {
+        return productId;
+    }
 
     public double getDiscountPercentage() {
         return discountPercentage;
