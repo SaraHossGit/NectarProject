@@ -132,7 +132,7 @@ public class DetailsActivity extends AppCompatActivity {
         //// Product Price ////
         productPrice.setText("$" + currentProd.getProductPrice());
         double oldPrice = currentProd.getProductPrice() + (currentProd.getProductPrice() * (currentProd.getDiscountPercentage()/100));
-        productPriceNoDisc.setText("$" + oldPrice);
+        productPriceNoDisc.setText("$" + String.format("%.2f", oldPrice));
         productPriceNoDisc.setPaintFlags(productPriceNoDisc.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG); // Strikethrough Effect
 
         //// Check Stock ////

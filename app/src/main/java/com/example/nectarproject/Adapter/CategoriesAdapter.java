@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -13,7 +12,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.example.nectarproject.R;
 import com.example.nectarproject.Repo.Local.CategoriesModel;
 import com.example.nectarproject.UI.CatSearchActivity;
@@ -50,10 +48,10 @@ public class CategoriesAdapter extends RecyclerView.Adapter {
         View view;
         switch (viewType){
             case CategoriesModel.MAX_VIEW:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_cat_item2, parent, false);
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_cat_max, parent, false);
                 return new MaxViewHolder(view);
             case CategoriesModel.MIN_VIEW:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_cat_item, parent, false);
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_cat_item_min, parent, false);
                 return new MinViewHolder(view);
         }
         return null;

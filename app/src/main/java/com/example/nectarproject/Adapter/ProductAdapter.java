@@ -39,9 +39,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHand
     @Override
     public void onBindViewHolder(@NonNull ProductAdapter.ViewHandler holder, int position) {
         holder.productName.setText(data.get(position).getProductName());
-//        holder.productAmount.setText(data.get(position).getProductStock());
-//        holder.productPrice.setText(data.get(position).getProductPrice());
-//        holder.productImage.setImageResource(data.get(position).getProductImage());
+        holder.productBrand.setText(data.get(position).getProductBrand());
+        holder.productPrice.setText("$"+String.valueOf(data.get(position).getProductPrice()));
+
         Glide.with(context)
                 .load(data.get(position).getProductImage())
                 .centerCrop()
@@ -65,14 +65,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHand
 
     public class ViewHandler extends RecyclerView.ViewHolder{
 
-        TextView productName, productAmount, productPrice;
+        TextView productName, productBrand, productPrice;
         ImageView productImage;
 
         public ViewHandler(@NonNull View itemView) {
             super(itemView);
 
             productName = itemView.findViewById(R.id.product_name);
-            productAmount = itemView.findViewById(R.id.product_amount);
+            productBrand = itemView.findViewById(R.id.product_brand);
             productPrice = itemView.findViewById(R.id.product_price);
             productImage = itemView.findViewById(R.id.product_image);
         }

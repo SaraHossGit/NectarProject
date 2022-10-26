@@ -40,14 +40,18 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:textColor="@color/black"
+                    android:ellipsize="end"
+                    android:maxLines="1"
                     android:text="Organic Bananas"/>
 
                 <TextView
-                    android:id="@+id/product_amount"
+                    android:id="@+id/product_brand"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:layout_gravity="start"
+                    android:ellipsize="end"
+                    android:maxLines="1"
                     android:text="7pcs, Priceg"/>
 
                 <LinearLayout
